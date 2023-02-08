@@ -54,12 +54,7 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 ## Acerca del Proyecto
 
-<img src="./resources/images/readMe/screenshot.png" alt="Logo" width="100%" height="50%">
 
-
-
-Este es una adaptación de la página web "https://circle-agency-35d27e.webflow.io/", proyecto que pone a prueba conocimientos nativos de HTML, CSS, Grid CSS, CSS Flexible Box Layout ( abreviado como flexbox ), y JavaScript. Este proyecto también incluye media queries, por lo tanto es un proyecto responsive en formato escritorio y teléfono móvil.
-Está desplegado a la página web "https://vercel.com/dashboard" conectado a través de GitHub, accesible a través del siguiente enlace - https://midterm-ironhack-nu.vercel.app/ -.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -67,7 +62,7 @@ Está desplegado a la página web "https://vercel.com/dashboard" conectado a tra
 
 ### Construido Con
 
-El proyecto está construido mediante el uso de HTML 5, CSS 3, CSS grid, CSS flexobox y ECMAScript v6., a través de Visual Studio Code.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
