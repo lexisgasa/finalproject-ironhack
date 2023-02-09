@@ -29,6 +29,7 @@ const showErrorMessage = ref(false);
 
 // const constant to save a variable that holds the value of the error message
 const errorMessage = ref(null);
+const emit = defineEmits(["addTitle"])
 
 // Arrow function para crear tareas.
 const addTask = () => {

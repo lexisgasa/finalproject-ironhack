@@ -1,7 +1,22 @@
 <template>
 <div class="container">
     <h3>{{task.title}}</h3>
-    <button @click="deleteTask">Delete {{task.title}}</button>
+    <h3>{{task.description}}</h3>
+    <!-- ! "COMPLETED" task behaviour -->
+    <button @click="">Completed</button>
+    <button @click="inputToggle">Edit</button>
+    <button @click="deleteTask">Delete</button>
+    <div v-if="showInput" >
+        <div>
+            <p>Edit title</p>
+            <input type="text" v-model="newTitle" placeholder="Insert new title">
+        </div>
+        <div>
+            <p>Edit Description</p>
+            <input type="text" v-model="newDescription" placeholder="Insert new description">
+        </div>
+        <button @click="sendData">Update!</button>
+    </div>
 </div>
 </template>
 
@@ -11,15 +26,44 @@ import { useTaskStore } from '../stores/task';
 import { supabase } from '../supabase';
 
 const taskStore = useTaskStore();
+const emit = defineEmits (["updateTask"])
 
 const props = defineProps({
     task: Object,
 });
 
+
+const showInput = ref(false)
+const newTitle = ref("")
+const newDescription = ref("")
+
+const inputToggle = () => {
+    showInput.value = !showInput.value
+}
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async() => {
     await taskStore.deleteTask(props.task.id);
+    emit("updateTask")
 };
+
+
+const showErrorMess = ref (false)
+const errorMess = ref(null);
+const sendData = async () => {
+    if(newTitle.value.length === 0 || newDescription.value.length === 0){
+        
+        //Lanzar un error
+        showErrorMess.value = true;
+        errorMess.value = "The task title or description is empty";
+        setTimeout(() => {
+        showErrorMess.value = false;
+        }, 5000);
+       
+    } else {
+        taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
+        emit("updateTask");
+    }
+}
 
 </script>
 
