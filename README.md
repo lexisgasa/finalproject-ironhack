@@ -36,17 +36,15 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
     <a href="#roadmap">Roadmap</a>
      <ul>
      <li><a href="#backlog">Back log</a></li>
-        <li><a href="#day-one">Lunes 23, Enero 2023</a></li>
-        <li><a href="#day-two">Martes 24, Enero 2023</a></li>
-        <li><a href="#day-three">Miercoles 25, Enero 2023</a></li>
-        <li><a href="#day-four">Jueves 26, Enero 2023</a></li>
-        <li><a href="#day-five">Viernes 27, Enero 2023</a></li>
+        <li><a href="#day-one">Martes 7, Febrero 2023</a></li>
+        <li><a href="#day-two">Miércoles 8, Febrero 2023</a></li>
+        <li><a href="#day-three">Jueves 9, Febrero 2023</a></li>
+        <li><a href="#day-four">Viernes 10, Febrero 2023</a></li>
       </ul>
     </li>
     <li><a href="#acerca">Acerca</a></li>
     <li><a href="#agradecimientos">Agradecimientos</a></li>
     <li><a href="#desafío-técnico">Desafío Técnico</a></li>
-    <li><a href="#grande-error">Grande Error</a></li>
   </ol>
 </details>
 
@@ -70,17 +68,16 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 ###### Martes 7, Febrero 2023
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] Inicializar proyecto - link con GitHub
+- [x] Leer y establecer una ruta de proyecto
+- [x] SignIn.vue funcional
 
 ###### Miércoles 8, Febrero 2023
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [] Añadir tareas funcional
+- [] Modificar tareas funcional
+- [] Borrar tareas funcional
+- [] Añadir tareas actualizado automatico
 
 ###### Jueves 9, Febrero 2023
 
@@ -112,7 +109,7 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 <!-- ACKNOWLEDGMENTS -->
 
-## agradecimientos
+## Agradecimientos
 
 
 
