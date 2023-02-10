@@ -74,24 +74,22 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 ###### Miércoles 8, Febrero 2023
 
-- [] Añadir tareas funcional
-- [] Modificar tareas funcional
-- [] Borrar tareas funcional
-- [] Añadir tareas actualizado automatico
+- [x] Añadir tareas funcional ( la tarea aparece completa, título y descripción )
+- [x] Completar modificar tareas  ( aparecen los debidos botones de modificación )
+- [x] Borrar tareas funcional ( las tareas se borran correctamente )
 
 ###### Jueves 9, Febrero 2023
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] Modificar tareas es funcional ( se actualiza correctamene el nuevo título y la nueva descripción )
+- [x] Añadido el actualizado automático de las tareas ( no es necesario refrescar página )
+- [x] Comprobar flow de las tareas funciona debidamente 
+- [x] Despliegue del proyecto en Vercel
 
 ###### Viernes 10, Febrero 2023
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Configuración de rutas funcional ( routers linkados correctamente )
+- [ ] Esqueleto del home completo
+- [ ] Función LogOut funcional
 
 
 

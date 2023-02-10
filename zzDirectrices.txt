@@ -20,3 +20,11 @@ Manejo de operaciones asíncronas: las operaciones asíncronas se manejarán cor
 
 Documentación: se mantendrá una ruta de trabajo en el readme del repositorio, actualizándolo diariamente.
 
+
+
+
+CSS
+
+- Hover cursor y cambio de color en los links del nav bar 
+- Hover cursor en enlaces opciones de tareas
+- 
