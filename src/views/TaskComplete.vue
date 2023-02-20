@@ -28,9 +28,7 @@ const getTasks = async () => {
 };
 
 getTasks();
-onUpdated(() => {
-    getTasks();
-});
+
 
 </script>
 
