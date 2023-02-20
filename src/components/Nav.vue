@@ -13,6 +13,9 @@
         <li>
           <router-link to="/account">Your Account</router-link>
         </li>
+        <li>
+          <router-link to="/timer">Set Pomodoro timer</router-link>
+        </li>
     </ul>
 
     <div>
