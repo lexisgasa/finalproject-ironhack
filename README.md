@@ -87,12 +87,18 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 ###### Viernes 10, Febrero 2023
 
-- [ ] Añadido el actualizado automático de las tareas
-- [ ] Flow de las tareas funciona debidamente
+- [x] Añadido el actualizado automático de las tareas
+- [x] Flow de las tareas funciona debidamente
 - [ ] Configuración de rutas funcional ( routers linkados correctamente )
-- [ ] Función LogOut funcional
-- [ ] Esqueleto del home completo
-- [ ] Esqueleto del perfil
+- [x] Función LogOut funcional
+- [x] Esqueleto del home completo
+- [x] Esqueleto del perfil
+
+###### Lunes 20, Febrero 2023
+
+- [ ] Configuración de las rutas funcional
+- [ ] Darle estilos
+
 
 
 
