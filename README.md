@@ -96,8 +96,13 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 ###### Lunes 20, Febrero 2023
 
-- [ ] Configuración de las rutas funcional
+- [x] Configuración de las rutas funcional
+- [x] Reloj Pomodoro
 - [ ] Darle estilos
+
+###### Lunes 20, Febrero 2023
+
+- [ ] Dar estilo
 
 
 
