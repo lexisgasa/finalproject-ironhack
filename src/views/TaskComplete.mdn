@@ -4,7 +4,7 @@
         <div>
             <h1>Completed Tasks:</h1>
         </div>
-        <div>
+        <div class="divCard">
             <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
         </div>
     </div>
@@ -28,7 +28,9 @@ const getTasks = async () => {
 };
 
 getTasks();
-
+onUpdated(() => {
+    getTasks();
+});
 
 </script>
 
