@@ -1,10 +1,10 @@
 <template>
   <nav>
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <router-link to="/">
+    <router-link to="/" class="start-link">
       Home
     </router-link>
-
+    <div class="mid-link">
     <ul>
         <li>
           <router-link to="/">Task Manager</router-link>
@@ -17,8 +17,8 @@
           <router-link to="/timer">Set Pomodoro timer</router-link>
         </li>
     </ul>
-
-    <div>
+</div>
+    <div class="end-link">
       <ul>
         <li class="log-out-welcome">
           <p>Welcome, user</p>
@@ -64,21 +64,53 @@ const signOut = async () => {
 </script>
 
 <style scoped>
-.navbar-img {
-  width: 90px;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;800&display=swap');
+
+
+*{
+  color: #0096FF;
+  font-family: "Poppins";
+  font-weight: 500;
 }
 
 nav {
-  background-color: #0008C1;
   display: flex;
-  width: 100%;
   justify-content: space-around;
   align-items: center;
+  padding: 1vw 4vw;
+  
+
+  font-size: 1.5rem;
+  background: repeating-linear-gradient(
+  -37deg,
+  #acd9ec,
+  #acd9ec 10px,
+  #ffffff 10px,
+  #acd9ec 20px
+);
+}
+
+.start-link {
+  width: 25vw;
+}
+.mid-link ul {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  justify-content: space-evenly;
+}
+
+.end-link ul {
+  display: flex;
+  flex-direction: row;
+  width: 25vw;
+  justify-content: flex-end;
+  gap: 2vw;
 }
 
 a {
   text-decoration: none;
-  color: #E6CBA8;
 }
 
 nav ul {
@@ -88,4 +120,19 @@ nav ul {
   flex-direction: column;
   align-items: center;
 }
+
+button:hover {
+  background-color: #ffaeb8;
+  color: #8f3348;
+  box-shadow: 0px 0px 18px #8f3348;
+}
+button {
+  background-color: #fec9cf;
+  color: #8f3348;
+  padding: 0.5vw;
+  font-size: 1.5rem;
+  border: 0.1rem solid #8f3348;
+  border-radius: 45%;
+}
+
 </style>

@@ -1,14 +1,11 @@
 <template>
   <div class="wrapper">
     <Nav />
-
     <div class="content"> 
-      <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link>
+      <NewTask />
+      <h1>Tasks:</h1>
+      <TaskItem v-for="task in tasks" :key="task.id" :task="task" @updateTask="getTasks" />
     </div>
-    <NewTask />
-    <h1>Tasks:</h1>
-    <TaskItem v-for="task in tasks" :key="task.id" :task="task" @updateTask="getTasks" />
   </div>
   <Footer />
 </template>
@@ -39,7 +36,23 @@ onUpdated (() => {
 
 </script>
 
-<style></style>
+<style scoped>
+
+
+.content {
+  background-image: url(../assets/741986.jpg);
+  height: 60vw;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav {
+  height: 4vw;
+}
+
+</style>
 
 <!-- 
 **Hints**

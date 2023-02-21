@@ -67,7 +67,12 @@ const sendData = async () => {
 
 </script>
 
-<style></style>
+<style scoped>
+.container {
+    display: flex;
+}
+
+</style>
 
 <!--
 **Hints**

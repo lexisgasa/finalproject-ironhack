@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <h1>ops</h1>
+    <h1>© 2023 Kirby themed Wu Tasks App. All rights reserved.</h1>
 </footer>
 </template>
 
@@ -10,10 +10,15 @@
 
 <style scoped>
 footer {
-  background-color: lightgray;
+  background-color: #0096FF;
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  font-size: 0.8rem;
+  text-shadow: 5px 7px 6px black;
+  width: 100vw;
+  height: 5vw;
+  color: white;
+
 }
 </style>
