@@ -3,11 +3,10 @@
 
     <div class="header">
       <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
+        <h3 class="header-title">Register here!</h3>
       </div>
     </div>
-
+    <div>
     <form @submit.prevent="signUp" class="form-sign-in">
       <div class="form">
         <div class="form-input">
@@ -42,8 +41,8 @@
             v-model="confirmPassword"
             required
           />
+          <button class="button" type="submit">Sign Up</button>
         </div>
-        <button class="button" type="submit">Sign Up</button>
         <p>
           Have an account?
           <PersonalRouter
@@ -54,7 +53,7 @@
         </p>
       </div>
     </form>
-
+</div>
     <div v-show="errorMsg">{{errorMsg}}</div>
   </div>
 </template>
@@ -104,4 +103,82 @@ const signUp = async () => {
 };
 </script>
 
-<style></style>
+
+<style scoped>
+
+.container {
+  height: 100vw;
+  background-image: url(../assets/741985.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 6rem;
+  text-shadow: 
+  0px 0px 5px #be7082,
+  0px 0px 8px #a84b61,
+  0px 0px 10px #8f3348;
+}
+
+
+
+
+
+form label {
+  font-size: 2rem;
+  color: #FF8787;
+  text-shadow: 
+  0px 0px 5px #ffff,
+  0px 0px 7px #ffff,
+  0px 0px 10px #ffff,
+  0px 0px 20px #ffff,
+  0px 0px 24px #ffff;
+
+}
+form ::placeholder {
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+form input {
+  padding: 0.5vw 8vw;
+  font-size: 2rem;
+  border: 0.15rem solid #8f3348;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #AEE2FF;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 18px #FF8787;
+}
+button {
+  background-color: #B9F3FC;
+  color: #000000;
+  padding: 0.5vw 7vw;
+  font-size: 1.5rem;
+  border: 0.15rem solid #8f3348;
+  margin-top: 2vw;
+}
+
+p {
+  font-size: 1.7rem;
+  text-decoration: none;
+  margin-bottom: 5vw;
+  text-align: center;
+}
+
+
+
+
+</style>
+

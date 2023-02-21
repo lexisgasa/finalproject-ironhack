@@ -1,83 +1,71 @@
 <template>
-<Nav />
+  <Nav />
 
-<div class="pomodoro">
-    <div class="background">
-    </div>
+  <div class="pomodoro">
+    <div class="background"></div>
     <h2 class="cyber">Time remaining</h2>
-    <h2 class="time">{{ formatTime(currentTime) }} </h2>
+    <h2 class="time">{{ formatTime(currentTime) }}</h2>
     <div class="buttons">
-    <button @click="startTimer">
-        Start
-    </button>
-    <button @click="stopTimer">
-        Stop
-    </button>
-    <button @click="resetTimer">
-        Restart
-    </button>
+      <button @click="startTimer">Start</button>
+      <button @click="stopTimer">Stop</button>
+      <button @click="resetTimer">Restart</button>
     </div>
-
-</div>
-<Footer />
+  </div>
+  <Footer />
 </template>
 
 <script setup>
-import Nav from "../components/Nav.vue"
-import Footer from "../components/Footer.vue"
+import Nav from "../components/Nav.vue";
+import Footer from "../components/Footer.vue";
 import { ref, onMounted } from "vue";
 
-
-const totalTime = ref(25*60)
-const currentTime = ref(totalTime.value)
-const isPaused = ref(true)
+const totalTime = ref(25 * 60);
+const currentTime = ref(totalTime.value);
+const isPaused = ref(true);
 
 const startTimer = () => {
-    if (isPaused.value) {
-        isPaused.value = false;
-        const intervalId = setInterval( () => {
-            if (currentTime.value === 0) {
-                clearInterval(intervalId)
-                isPaused.value = true
-            } else {
-                currentTime.value--;
-            }
-        }, 1000)
-    }
+  if (isPaused.value) {
+    console.log(isPaused.value);
+    const intervalId = setInterval(() => {
+      if (isPaused.value) {
+        if (currentTime.value === 0) {
+          console.log("ispaused");
+          clearInterval(intervalId);
+          isPaused.value = true;
+        } else {
+          currentTime.value--;
+        }
+      }
+    }, 1000);
+  }
 };
 
-
 const stopTimer = () => {
-    isPaused.value = true
-    clearInterval(intervalId)
-}
+  console.log(isPaused.value);
+  isPaused.value = false;
+};
 
 const resetTimer = () => {
-    currentTime.value = totalTime.value
+  currentTime.value = totalTime.value;
+};
+
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
+  return `${minutes < 10 ? "0" : ""}${minutes}:${
+    seconds < 10 ? "0" : ""
+  }${seconds}`;
 }
-
-
-
-    function formatTime(time) {
-      const minutes = Math.floor(time / 60);
-      const seconds = time % 60;
-      return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-}
-
-
 </script>
 
 <style scoped>
-
-
-
 .pomodoro {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 5rem;
   height: 100vh;
 }
@@ -88,7 +76,7 @@ const resetTimer = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://rare-gallery.com/uploads/posts/981298-city-futuristic-digital-art-dystopic-neo-tokyo.jpg');
+  background-image: url("https://rare-gallery.com/uploads/posts/981298-city-futuristic-digital-art-dystopic-neo-tokyo.jpg");
   background-size: cover;
   filter: brightness(50%);
   z-index: -1;
@@ -103,8 +91,8 @@ const resetTimer = () => {
   border-radius: 50%;
   background-color: #5c5b9a;
   background-image: radial-gradient(circle at 0 0, #5c5b9a, #452b61);
-  box-shadow: 0 0 10px #5c5b9a, 0 0 20px #5c5b9a, 0 0 30px #5c5b9a, 0 0 40px #452b61,
-    0 0 70px #452b61, 0 0 80px #452b61, 0 0 100px #452b61;
+  box-shadow: 0 0 10px #5c5b9a, 0 0 20px #5c5b9a, 0 0 30px #5c5b9a,
+    0 0 40px #452b61, 0 0 70px #452b61, 0 0 80px #452b61, 0 0 100px #452b61;
   animation: flicker 2s infinite;
 }
 
@@ -114,7 +102,7 @@ const resetTimer = () => {
 }
 
 button {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 2rem;
   margin: 0 1rem;
   padding: 1rem 2rem;
@@ -145,16 +133,12 @@ button:hover {
 }
 
 .cyber {
-
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 4rem;
   text-transform: uppercase;
   color: #841a9e;
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff, 0 0 90px #00ffff, 0 0 100px #00ffff, 0 0 150px #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff,
+    0 0 40px #00ffff, 0 0 80px #00ffff, 0 0 90px #00ffff, 0 0 100px #00ffff,
+    0 0 150px #00ffff;
 }
-
-
-
-
-
 </style>

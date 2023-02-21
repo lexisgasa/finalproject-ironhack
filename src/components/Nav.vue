@@ -63,17 +63,22 @@ const signOut = async () => {
 
 </script>
 
-<style>
+<style scoped>
 .navbar-img {
   width: 90px;
 }
 
 nav {
-  background-color: lightgray;
+  background-color: #0008C1;
   display: flex;
   width: 100%;
   justify-content: space-around;
   align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #E6CBA8;
 }
 
 nav ul {

@@ -34,5 +34,31 @@ onMounted(async () => {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
 
+* {
+  font-family: "Annie use your telescope", Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+html, body {
+  width: 100vw;
+  height: 100vw;
+  font-size: 1rem;
+  margin: 0;
+  overflow-y: hidden;
+
+
+}
+
+
+@media (max-width: 650px) {
+
+  body {
+    background-color: black;
+  }
+
+
+
+}
 </style>

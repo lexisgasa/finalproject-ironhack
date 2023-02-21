@@ -100,9 +100,11 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 - [x] Reloj Pomodoro
 - [ ] Darle estilos
 
-###### Lunes 20, Febrero 2023
+###### Martes 21, Febrero 2023
 
 - [ ] Dar estilo
+- [ ] Botón con clase
+
 
 
 
