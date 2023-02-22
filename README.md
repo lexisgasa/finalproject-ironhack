@@ -98,12 +98,19 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 - [x] Configuración de las rutas funcional
 - [x] Reloj Pomodoro
-- [ ] Darle estilos
+- [x] Diseñar el estilo
 
 ###### Martes 21, Febrero 2023
 
-- [ ] Dar estilo
-- [ ] Botón con clase
+- [x] Dar estilo a sign in y log in
+- [x] Botón con clase funcional
+
+###### Miercoles 22, Febrero 2023
+
+- [ ] Dar estilo nav
+- [ ] Dar estilo footer
+- [ ] Dar estilo página pomodoro
+
 
 
 
