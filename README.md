@@ -104,12 +104,14 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 - [x] Dar estilo a sign in y log in
 - [x] Botón con clase funcional
+- [x] Dar estilo nav
+- [x] Dar estilo footer
 
 ###### Miercoles 22, Febrero 2023
 
-- [ ] Dar estilo nav
-- [ ] Dar estilo footer
 - [ ] Dar estilo página pomodoro
+- [ ] Dar estilo tasks
+- [ ] Empezar estilo responsive
 
 
 
