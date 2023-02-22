@@ -71,21 +71,21 @@ const signOut = async () => {
 *{
   color: #0096FF;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 300;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 1vw 4vw;
+  padding: 0.3vw 3vw;
   
 
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   background: repeating-linear-gradient(
   -37deg,
-  #acd9ec,
-  #acd9ec 10px,
+  #ABD9FF,
+  #ABD9FF 10px,
   #ffffff 10px,
   #acd9ec 20px
 );
@@ -115,7 +115,6 @@ a {
 
 nav ul {
   list-style: none;
-  padding-inline-start: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,7 +129,7 @@ button {
   background-color: #fec9cf;
   color: #8f3348;
   padding: 0.5vw;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: 0.1rem solid #8f3348;
   border-radius: 45%;
 }

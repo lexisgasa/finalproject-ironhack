@@ -14,10 +14,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   text-shadow: 5px 7px 6px black;
   width: 100vw;
-  height: 5vw;
+  height: 2.7vw;
   color: white;
 
 }

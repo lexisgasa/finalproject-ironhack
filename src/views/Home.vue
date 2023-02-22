@@ -41,7 +41,9 @@ onUpdated (() => {
 
 .content {
   background-image: url(../assets/741986.jpg);
-  height: 60vw;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 41vw;
   display: flex;
   flex-direction: column;
     align-items: center;

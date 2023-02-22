@@ -116,8 +116,10 @@ const signUp = async () => {
   align-items: center;
 }
 
+
 .header-title {
-  font-size: 6rem;
+  font-size: 5.5rem;
+  height: 5.5vw;
   text-shadow: 
   0px 0px 5px #be7082,
   0px 0px 8px #a84b61,
@@ -141,12 +143,12 @@ form label {
 }
 form ::placeholder {
   text-align: center;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 form input {
-  padding: 0.5vw 8vw;
-  font-size: 2rem;
+  padding: 0.3vw 7.5vw;
+  font-size: 1.5rem;
   border: 0.15rem solid #8f3348;
 }
 
@@ -165,15 +167,15 @@ button {
   background-color: #B9F3FC;
   color: #000000;
   padding: 0.5vw 7vw;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: 0.15rem solid #8f3348;
   margin-top: 2vw;
 }
 
 p {
-  font-size: 1.7rem;
+  margin-top: 3vw;
+  font-size: 1.5rem;
   text-decoration: none;
-  margin-bottom: 5vw;
   text-align: center;
 }
 

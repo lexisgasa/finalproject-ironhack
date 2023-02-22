@@ -86,6 +86,7 @@ const signIn = async () => {
 
 <style scoped>
 
+
 .container {
   height: 100vw;
   background-image: url(../assets/741985.jpg);
@@ -98,8 +99,8 @@ const signIn = async () => {
 }
 
 .header-title {
-  height: 13vw;
-  font-size: 6rem;
+  height: 12vw;
+  font-size: 5.5rem;
   text-shadow: 
   0px 0px 5px #be7082,
   0px 0px 8px #a84b61,
@@ -107,7 +108,7 @@ const signIn = async () => {
 }
 
 .header-subtitle {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 span {
@@ -128,12 +129,12 @@ form {
 
 form ::placeholder {
   text-align: center;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 form input {
-  padding: 0.5vw 8vw;
-  font-size: 2rem;
+  padding: 0.3vw 7.5vw;
+  font-size: 1.8rem;
   border: 0.15rem solid #8f3348;
 }
 
@@ -147,14 +148,14 @@ button {
   background-color: #B9F3FC;
   color: #000000;
   padding: 0.5vw;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: 0.15rem solid #8f3348;
 }
 
 p {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   text-decoration: none;
-  margin-bottom: 5vw;
+  margin-bottom: 3vw;
 }
 
 .swipe-down:hover {
