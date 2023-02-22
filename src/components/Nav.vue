@@ -4,6 +4,7 @@
     <router-link to="/" class="start-link">
       Home
     </router-link>
+    <img src="../assets/kirby-run.png" alt="">
     <div class="mid-link">
     <ul>
         <li>
