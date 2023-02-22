@@ -1,17 +1,17 @@
 <template>
     <div class="tasks">
-        <h1>Add a new Task</h1>
+        <h1>Type your task down here and give your best!</h1>
         <div v-if="showErrorMessage">
             <p class="error-text">{{ errorMessage }}</p>
         </div>
-        <div>
+        <div class="task-text">
             <div class="input-field">
                 <input type="text" placeholder="Add a Task Title" v-model="name">
             </div>
             <div class="input-field">
-                <textarea rows="5" cols="50" placeholder="Add a Task Description" v-model="description" />
+                <textarea rows="2" cols="50" placeholder="Add a Task Description" v-model="description" />
             </div>
-            <button @click="addTask" class="button">Add</button>
+            <button @click="addTask" class="button">Add new task!</button>
         </div>
     </div>
 </template>
@@ -56,6 +56,46 @@ if(name.value.length === 0 || description.value.length === 0){
 </script>
 
 <style scoped>
+
+.task-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4vw;
+}
+
+input, textarea {
+    background-color: #ffd1d9;
+    border: none;
+    border-radius: 5px 50px 50px 25px;
+    resize: none;
+    text-align: center;
+    font-size: 1.5rem;
+}
+textarea {
+    padding: 3vw 2vw 1vw;
+}
+
+button:hover {
+  background-color: #0096FF;
+  color: #FFFFFF;
+  box-shadow: 0px 0px 18px #FF8787;
+}
+button {
+  background-color: #AEE2FF;
+  color: #000000;
+  padding: 0.5vw;
+  font-size: 1.5rem;
+  border: 0.15rem solid #ffbdc8;
+  border-radius: 50px;
+}
+h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+  text-decoration: underline;
+}
+
+
 
 </style>
   

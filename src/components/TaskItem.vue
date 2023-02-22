@@ -1,109 +1,198 @@
 <template>
-<div class="container">
-    <h3>{{task.title}}</h3>
-    <h3>{{task.description}}</h3>
-    <!-- ! "COMPLETED" task behaviour -->
-    <button @click="">Completed</button>
-    <button @click="inputToggle">Edit</button>
-    <button @click="deleteTask">Delete</button>
-    <div v-if="showInput" >
-        <div>
-            <p>Edit title</p>
-            <input type="text" v-model="newTitle" placeholder="Insert new title">
+  <div :class="{ completed: isComplete, containerTask: true }">
+    <div class="container">
+        <div class="task-order">
+      <h3>{{ task.title }}</h3>
+      <h3>{{ task.description }}</h3>
+      <div v-if="!showEdit">
+        <button @click="completeTask" class="backgroundButton">
+          <img src="../assets/done3s.png" />
+        </button>
+        <button @click="editTask" class="backgroundButton">
+            <img src="../assets/edit4s.png" />
+        </button>
+        <button @click="showModal" class="backgroundButton">
+          <img src="../assets/trash2s.png" />
+        </button>
         </div>
-        <div>
-            <p>Edit Description</p>
-            <input type="text" v-model="newDescription" placeholder="Insert new description">
+      </div>
+      <div v-if="showEdit">
+        <input type="text" v-model="newTitle" placeholder="Insert new title" />
+        <textarea cols="5" rows="5" />
+        <div class="buttonEditCheckDelete">
+          <button @click="edited" class="backgroundButton">
+            <img class="buttonImgSaveAndCancel" src="" />
+          </button>
+          <button @click="cancelEdit" class="backgroundButton">
+            <img class="buttonImgSaveAndCancel" src="" />
+          </button>
         </div>
-        <button @click="sendData">Update!</button>
+      </div>
     </div>
-</div>
+
+    <div v-if="showEdit">
+      <input type="text" v-model="currentTitle" />
+      <textarea cols="5" rows="5" />
+      <div class="buttonEditCheckDelete">
+        <button @click="edited" class="backgroundButton">
+          <img class="buttonImgSaveAndCancel" src="" />
+        </button>
+        <button @click="cancelEdit" class="backgroundButton">
+          <img class="buttonImgSaveAndCancel" src="" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div v-if="modal">
+    <div class="modal">
+        <div class="backgroundImage">
+        <h3>Are you sure you want to delete ?</h3>
+        <img class="trashImg" src="../assets/trash1s.png" />
+      </div>
+      <p>If you delete this task, you can't get it back</p>
+      <div class="buttonEditCheckDelete">
+        <button @click="deleteTask" class="modalButton">
+          <img src="../images/yesButton.png" />
+        </button>
+        <button @click="closeModal" class="modalButton">
+          <img src="../images/noButton.png" />
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useTaskStore } from '../stores/task';
-import { supabase } from '../supabase';
+import { ref, reactive } from "vue";
+import { useTaskStore } from "../stores/task";
+import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
-const emit = defineEmits (["updateTask"])
+const emit = defineEmits(["updateTask"]);
 
 const props = defineProps({
-    task: Object,
+  task: Object,
 });
+const isComplete = ref(props.task.is_complete);
+const showEdit = ref(false);
+const modal = ref(false);
 
-
-const showInput = ref(false)
-const newTitle = ref("")
-const newDescription = ref("")
-
-const inputToggle = () => {
-    showInput.value = !showInput.value
-}
-// Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
-const deleteTask = async() => {
-    await taskStore.deleteTask(props.task.id);
-    emit("updateTask")
+const currentTitle = ref("");
+const currentDescription = ref("");
+const showModal = () => {
+  modal.value = true;
+  document.body.style.overflow = "hidden";
 };
 
+const closeModal = () => {
+  modal.value = false;
+  document.body.style.overflow = "auto";
+};
 
-const showErrorMess = ref (false)
+const deleteTask = async () => {
+  await taskStore.deleteTask(props.task.id);
+  document.body.style.overflow = "auto";
+};
+
+const completeTask = () => {
+  isComplete.value = !isComplete.value;
+  taskStore.toggleTask(isComplete.value, props.task.id);
+};
+
+const cancelEdit = () => {
+  showEdit.value = false;
+};
+
+const editTask = () => {
+  showEdit.value = true;
+  currentTitle.value = props.task.title;
+  currentDescription.value = props.task.description;
+};
+
+const edited = () => {
+  taskStore.edited(currentTitle.value, currentDescription.value, props.task.id);
+  showEdit.value = false;
+};
+
+const addColor = () => {
+  addColor.value = true;
+};
+// Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
+
+const showErrorMess = ref(false);
 const errorMess = ref(null);
 const sendData = async () => {
-    if(newTitle.value.length === 0 || newDescription.value.length === 0){
-        
-        //Lanzar un error
-        showErrorMess.value = true;
-        errorMess.value = "The task title or description is empty";
-        setTimeout(() => {
-        showErrorMess.value = false;
-        }, 5000);
-       
-    } else {
-        taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
-        emit("updateTask");
-    }
-}
-
+  if (newTitle.value.length === 0 || newDescription.value.length === 0) {
+    //Lanzar un error
+    showErrorMess.value = true;
+    errorMess.value = "The task title or description is empty";
+    setTimeout(() => {
+      showErrorMess.value = false;
+    }, 5000);
+  } else {
+    taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
+    emit("updateTask");
+  }
+};
 </script>
 
 <style scoped>
-.container {
+
+.task-order {
     display: flex;
+    flex-direction: column;
+    background-color: #ffd1d9;
+    margin-top: -1vw;
+    padding: 10px; 
+    border: 0.2rem solid;
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 8s rotate linear infinite;
 }
 
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.task-order img {
+    object-fit: contain;
+    height: 2vw;
+    width: 4vw;
+}
+
+.backgroundButton {
+    background-color: #ABD9FF;
+}
+
+.modal {
+    background-color: #ABD9FF;
+    margin-top: -1vw;
+    padding: 10px; 
+    border: 0.2rem solid;
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 8s rotate linear infinite;
+}
+
+
+
+.trashImg {
+    position: absolute;
+    top: 66%;
+    left: 29.5%;
+
+width: 60%;
+  
+}
+
+.backgroundImage {
+    position: relative;
+}
 </style>
 
-<!--
-**Hints**
-1. ref() or reactive() can be used here to store the following, think if you want to store them either individually or
-like an object, up to you.
-
-2. Data properties need here are the following: a boolean to store a false**Important variable, a string to store an error,
-a string to store the value of the task that the user can edit, an initial false boolean to hide the inputFIeld used to edit
-the new task detail or details[this is in reference of the task title and the task description].
-
-3. Store the custom emit events that will be used to call the functions of the homeView for editing, deleting and toggling the
-status[completed, not complted] of the taskItem.
-
-4. Function to handle the error with the data properties used to control the error and the the boolean controlling the boolean
-empty variable.
-
-5. Function to handle the edit dialogue where the inputField is displayed and the string used to store the value of the
-inputField will be used here to save the value as a prop on this function.
-
-6. Function to emmit a custom event emit() that takes 2 parameters a name for the custom event and the value that will be
-send via the prop to the parent component. This function can control the toggle completion of the task on the homeview.
-
-7. Function to edit the task information that you decided that the user can edit. This function's body takes in a conditional
-that first checks if the value of the task [either title and description or just title] is empty which if true it runs the
-function used to handle the error on hint4. Else, the conditional sets the first mentioned boolean data property on hint2
-back to its inital boolean value to hide the error message and repeat the same for the data property mentioned 4th on hint2;
-a constant that stores an object that holds the oldValue from the prop item and the value of the task coming from the data
-property mentioned 3rd on hint2; a custom event emit() that takes 2 parameters a name for the custom event and the value
-from the object used on this part of the conditional and lastly this part of the conditional sets the value of input field
-to an empty string to clear it from the ui.
-
-8. Function to emmit a custom event emit() that takes 2 parameters a name for the custom event and the value that will be
-send via the prop to the parent component. This function can control the removal of  the task on the homeview.
--->
