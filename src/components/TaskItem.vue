@@ -1,11 +1,16 @@
 <template>
-  <div :class="{ completed: isComplete}" class="container-style">
+  <!-- <div :class="{ completed: isComplete}" class="container-style"> -->
+  <div class="container-style">
     <div class="container">
       <div class="task-order">
-        <h3>{{ task.title }}</h3>
-        <h3>{{ task.description }}</h3>
+        <h3 
+        :class="isComplete ? 'line-through' : null "
+        >{{ task.title }}</h3>
+        <h3
+        :class="isComplete ? 'line-through' : null "
+        >{{ task.description }}</h3>
         <div v-if="!editData">
-          <button @click="completeTask" class="backgroundButton">
+          <button @click="toggleComplete" class="backgroundButton">
             <img src="../assets/done3s.png" />
           </button>
           <button @click="editTask" class="backgroundButton">
@@ -62,14 +67,19 @@ const emit = defineEmits(["updateTask"]);
 const props = defineProps({
   task: Object,
 });
-const isComplete = ref(props.task.is_complete);
+// const isComplete = ref(props.task.is_complete);
 const editData = ref(false);
 const modal = ref(false);
 const currentTitle = ref("");
 const currentDescription = ref("");
 const newDescription = ref("")
 const newTitle = ref("")
+const isComplete = ref(false)
 
+
+const toggleComplete = () => {
+  isComplete.value = !isComplete.value;
+}
 
 const showModal = () => {
   modal.value = true;
@@ -85,10 +95,12 @@ const deleteTask = async () => {
 
 };
 
-const completeTask = () => {
-  isComplete.value = !isComplete.value;
-  taskStore.toggleTask(isComplete.value, props.task.id);
-};
+// const completeTask = () => {
+//   isComplete.value = !isComplete.value;
+//   taskStore.toggleTask(isComplete.value, props.task.id);
+// };
+
+
 
 const cancelEdit = () => {
   editData.value = false;
@@ -120,12 +132,16 @@ const sendData = async () => {
     emit("updateTask");
   }
 };
+
+
 </script>
 
 <style scoped>
 
 
-
+.line-through {
+  text-decoration: line-through;
+}
 .container-style {
   display: flex;
     flex-direction: row;
@@ -211,6 +227,9 @@ margin-left: 4vw;
   margin-left: 0.5vw;
   border: none;
   border-radius: 15px;
+}
+.backgroundButton:hover {
+  cursor: pointer;
 }
 
 .modal {
