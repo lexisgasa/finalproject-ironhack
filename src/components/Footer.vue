@@ -28,7 +28,8 @@ footer {
 
 
 footer {
-  height: 4.5vw;
+  height: 10vw;
+  font-size: 0.7rem;
 }
 
 

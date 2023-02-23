@@ -71,14 +71,22 @@ h1 {
 @media (max-width: 650px)  {
 
 nav {
-  height: 9vw;
+  height: 14vw;
+}
+
+.content {
+background-image: url(../assets/kirby3phone.jpeg);
+  height: 114vw;
+  padding-left: 6vw;
+}
+
+.task-org {
+gap: 10vw
 }
 
 
-
-.content {
- background-image: none;
- 
+h1 {
+  font-size: 2.5rem;
 
 }
 

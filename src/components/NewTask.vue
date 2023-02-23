@@ -111,11 +111,11 @@ h1 {
 
     .task-text {
 
-    gap: 1.5vw;
+    gap: 2.5vw;
 }
 
 input, textarea {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 textarea {
     padding: 3vw 2vw 1vw;
@@ -124,11 +124,11 @@ textarea {
 
 button {
 
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 
 }
 h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
 
 }
 

@@ -261,4 +261,59 @@ margin-left: 4vw;
   border-radius: 50%;
   box-shadow: 0px 0px 15px #fff4d2;
 }
+
+
+@media (max-width:650px) {
+  
+
+
+.editButtons {
+margin-left: 7vw;
+}
+
+.editIcon {
+  object-fit: contain;
+  object-position: 1vw;
+  height: 6vw;
+  width: 8vw;
+}
+
+
+
+
+.task-order {
+  font-size: 1.5rem;
+}
+
+
+
+.task-order img {
+  object-fit: contain;
+  height: 8vw;
+  width: 7vw;
+}
+
+
+.modal {
+  height: 27vw;
+  font-size: 1.2rem;
+
+}
+
+.modalIcon {
+  object-fit: contain;
+  object-position: -0.1vw;
+  height: 8vw;
+  width: 8vw;
+}
+
+.modalButton {
+  width: 9vw;
+  height: 8vw;
+}
+
+
+}
+
+
 </style>

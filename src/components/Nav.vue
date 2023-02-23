@@ -80,7 +80,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   padding: 0.3vw 3vw;
-  
+  height: 4vw;
 
   font-size: 1.2rem;
   background: repeating-linear-gradient(
