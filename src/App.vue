@@ -47,16 +47,26 @@ html, body {
   font-size: 1rem;
   margin: 0;
   overflow-y: hidden;
-
-
+  overflow-x: hidden;
 }
 
 
 @media (max-width: 650px) {
 
-  body {
-    background-color: black;
-  }
+  * {
+  font-family: "Annie use your telescope", Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+html, body {
+  width: 100vw;
+  height: 100vw;
+  font-size: 1rem;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: black;
+}
 
 
 

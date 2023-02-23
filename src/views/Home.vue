@@ -72,4 +72,13 @@ h1 {
 }
 
 
+@media (max-width: 650px) {
+
+nav {
+  height: 10vw;
+}
+
+
+}
+
 </style>

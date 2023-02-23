@@ -164,4 +164,16 @@ p {
 }
 
 
+
+
+
+/* media query */
+
+@media (max-width: 650px) {
+
+body {
+  background-color: blue;
+}
+}
+
 </style>

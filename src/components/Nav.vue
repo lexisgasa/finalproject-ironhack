@@ -82,7 +82,7 @@ nav {
   padding: 0.3vw 3vw;
   
 
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   background: repeating-linear-gradient(
   -37deg,
   #ABD9FF,
@@ -133,6 +133,32 @@ button {
   font-size: 1.3rem;
   border: 0.1rem solid #8f3348;
   border-radius: 45%;
+}
+
+
+
+
+@media (max-width: 650px) {
+
+* {
+ font-size: 0.7rem; 
+}
+
+button {
+  padding: 0.4vw;
+  font-size: 1rem;
+  border: 0.1rem solid #8f3348;
+  border-radius: 45%;
+
+}
+
+img {
+  display: none;
+}
+
+
+
+
 }
 
 </style>
