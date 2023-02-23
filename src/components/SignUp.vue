@@ -179,7 +179,50 @@ p {
   text-align: center;
 }
 
+@media (max-width: 650px) {
+  
+.container {
+  background-image: none;
+}
 
+
+.header-title {
+  font-size: 5.5rem;
+  height: 15vw;
+}
+
+
+
+
+form input {
+  padding: 0.3vw 7.5vw;
+  font-size: 1.5rem;
+  border: 0.15rem solid #8f3348;
+}
+
+.form-input {
+ 
+  gap: 2vw;
+  margin-bottom: 3vw;
+}
+
+
+button {
+  background-color: #B9F3FC;
+  color: #000000;
+  padding: 0.5vw 7vw;
+  font-size: 1.3rem;
+  border: 0.15rem solid #8f3348;
+  margin-top: 5vw;
+}
+
+p {
+  margin-top: 7vw;
+  font-size: 1.7rem;
+  text-decoration: none;
+  text-align: center;
+}
+}
 
 
 </style>

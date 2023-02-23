@@ -5,9 +5,9 @@
       <div class="header-title">
         <h1 class="header-title"> Welcome! </h1>
       </div>
-    <h2 class="header-subtitle"> It matters what you do, so feel free organize your <span>tasks here!</span> </h2>
-    <div 
-    class="sign-in-form">
+      <h2 class="header-subtitle"> It matters what you do, so feel free organize your <span>tasks here!</span> </h2>
+      <div 
+      class="sign-in-form">
       <form @submit.prevent="signIn">
         <input
         type="email"
@@ -27,12 +27,12 @@
         >
         <br>
         <button 
-      
+        
         :class="buttonClass"
         type="submit"
         >Sign in</button>
       </form>
-
+    
       <p>* Password must have 6 characters at least!</p>
       <p>Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="sign-up-link"/></p>
     </div>
@@ -170,10 +170,45 @@ p {
 /* media query */
 
 @media (max-width: 650px) {
+  .container {
+  height: 100vw;
+ background-image: none;
+ gap: 10vw;
+  }
 
-body {
-  background-color: blue;
+.header-title {
+  height: 25vw;
+  font-size: 5.5rem;
+  text-shadow: 
+  0px 0px 5px #be7082,
+  0px 0px 8px #a84b61,
+  0px 0px 10px #8f3348;
 }
+
+.header-subtitle {
+  font-size: 1.5rem;
 }
+
+span {
+  text-shadow: none
+}
+
+form {
+gap: 1vw;
+}
+
+
+
+p {
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-bottom: 10vw;
+}
+
+
+  
+}
+
+
 
 </style>

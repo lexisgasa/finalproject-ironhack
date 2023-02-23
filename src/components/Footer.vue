@@ -21,4 +21,16 @@ footer {
   color: white;
 
 }
+
+
+
+@media (max-width: 650px) {
+
+
+footer {
+  height: 4.5vw;
+}
+
+
+}
 </style>

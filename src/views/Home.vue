@@ -51,10 +51,6 @@ onUpdated (() => {
   padding-left: 4vw;
 }
 
-nav {
-  height: 4vw;
-}
-
 .task-org {
 display: flex;
 flex-wrap: wrap;
@@ -72,10 +68,18 @@ h1 {
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 650px)  {
 
 nav {
-  height: 10vw;
+  height: 9vw;
+}
+
+
+
+.content {
+ background-image: none;
+ 
+
 }
 
 

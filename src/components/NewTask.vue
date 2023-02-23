@@ -97,5 +97,50 @@ h1 {
 
 
 
+
+
+
+
+@media (max-width: 650px) {
+
+
+    * {
+        font-size: 0;
+    }
+
+
+    .task-text {
+
+    gap: 1.5vw;
+}
+
+input, textarea {
+    font-size: 1.2rem;
+}
+textarea {
+    padding: 3vw 2vw 1vw;
+}
+
+
+button {
+
+  font-size: 1.2rem;
+
+}
+h1 {
+    font-size: 2rem;
+
+}
+
+
+
+
+
+
+
+
+}
+
+
 </style>
   

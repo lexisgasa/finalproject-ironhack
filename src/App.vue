@@ -43,7 +43,7 @@ onMounted(async () => {
 
 html, body {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   font-size: 1rem;
   margin: 0;
   overflow-y: hidden;
@@ -51,24 +51,11 @@ html, body {
 }
 
 
-@media (max-width: 650px) {
-
-  * {
-  font-family: "Annie use your telescope", Verdana, Geneva, Tahoma, sans-serif;
-
-}
-
-html, body {
-  width: 100vw;
-  height: 100vw;
-  font-size: 1rem;
-  margin: 0;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  background-color: black;
-}
-
-
+@media (max-width: 650px) and (max-height: 900px){
+  
+ body {
+  background-image: linear-gradient(to bottom, #fdf6bb, #ffb1c4);
+ }
 
 }
 </style>
