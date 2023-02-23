@@ -64,21 +64,17 @@ function formatTime(time) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
   font-size: 5rem;
-  height: 100vh;
+  height: 85vh;
 }
 
 .background {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://rare-gallery.com/uploads/posts/981298-city-futuristic-digital-art-dystopic-neo-tokyo.jpg");
-  background-size: cover;
-  filter: brightness(50%);
+  background-image: url("../assets/r4xazqhvqx781.png");
+  filter: brightness(75%);
   z-index: -1;
 }
 
@@ -86,19 +82,19 @@ function formatTime(time) {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  width: 23vw;
+  border-radius: 45px;
   background-color: #5c5b9a;
-  background-image: radial-gradient(circle at 0 0, #5c5b9a, #452b61);
+  background-image: radial-gradient(circle at 0 0, #5c5b9a, #341e4c);
   box-shadow: 0 0 10px #5c5b9a, 0 0 20px #5c5b9a, 0 0 30px #5c5b9a,
     0 0 40px #452b61, 0 0 70px #452b61, 0 0 80px #452b61, 0 0 100px #452b61;
   animation: flicker 2s infinite;
+  margin-top: 3vw;
 }
 
 .buttons {
   display: flex;
-  margin-top: 2rem;
+  padding: 1vw;
 }
 
 button {
@@ -107,9 +103,9 @@ button {
   margin: 0 1rem;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: #5c5b9a;
-  color: #fff;
+  color: #ffffff;
   text-shadow: 0 0 5px #fff;
   cursor: pointer;
   transition: all 0.2s;
@@ -134,11 +130,50 @@ button:hover {
 
 .cyber {
   font-family: "Orbitron", sans-serif;
-  font-size: 4rem;
+  font-size: 3.3rem;
   text-transform: uppercase;
   color: #841a9e;
   text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff,
     0 0 40px #00ffff, 0 0 80px #00ffff, 0 0 90px #00ffff, 0 0 100px #00ffff,
     0 0 150px #00ffff;
 }
+
+
+@media (max-width: 650px) {
+  .pomodoro {
+  font-size: 5rem;
+  height: 82vh;
+}
+
+nav {
+  height: 15vw;
+}
+
+.background {
+  background-image: none;
+}
+
+.time {
+  width: 45vw;
+  margin-top: 12vw;
+}
+
+.buttons {
+  padding: 5vw;
+}
+
+
+
+.cyber {
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #841a9e;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff,
+    0 0 40px #00ffff, 0 0 80px #00ffff, 0 0 90px #00ffff, 0 0 100px #00ffff,
+    0 0 150px #00ffff;
+}
+}
+
+
 </style>

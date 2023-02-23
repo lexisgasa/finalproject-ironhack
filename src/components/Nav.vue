@@ -141,7 +141,7 @@ button {
 @media (max-width: 650px) {
 
 * {
- font-size: 0.7rem; 
+ font-size: 0.8rem; 
 }
 
 button {
