@@ -117,6 +117,7 @@ Tener un archivo README.md bien estructurado y bien documentado también puede s
 
 ###### Jueves 23, Febrero 2023
 
+- [x] Estilar modal
 - [ ] Dar estilo página pomodoro
 - [ ] Acabar responsive
 - [ ] Cambiar algún detalle ( user, hora local.. )

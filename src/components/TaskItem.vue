@@ -35,7 +35,7 @@
       <textarea cols="5" rows="5" />
       <div class="buttonEditCheckDelete">
         <button @click="edited" class="backgroundButton">
-          <img class="buttonImgSaveAndCancel" src="" />
+          <img class="buttonImgSaveAndCancel" src="../assets/done2.png" />
         </button>
         <button @click="cancelEdit" class="backgroundButton">
           <img class="buttonImgSaveAndCancel" src="" />
@@ -45,17 +45,14 @@
   </div>
   <div v-if="modal">
     <div class="modal">
-        <div class="backgroundImage">
         <h3>Are you sure you want to delete ?</h3>
-        <img class="trashImg" src="../assets/trash1s.png" />
-      </div>
       <p>If you delete this task, you can't get it back</p>
-      <div class="buttonEditCheckDelete">
+      <div class="editButton">
         <button @click="deleteTask" class="modalButton">
-          <img src="../images/yesButton.png" />
+          <img src="../assets/trash1s.png" class="modalIcon" />
         </button>
         <button @click="closeModal" class="modalButton">
-          <img src="../images/noButton.png" />
+          <img src="../assets/icons8-cancel-64.png" class="modalIcon" />
         </button>
       </div>
     </div>
@@ -178,21 +175,41 @@ const sendData = async () => {
     border: 0.2rem solid;
     border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
     animation: 8s rotate linear infinite;
+    height: 11vw;
+    font-size: 1.2rem;
+    font-weight: 800;
 }
 
+.editButton {
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.modalIcon {
+ object-fit: contain;
+ object-position: -0.1vw;
+ height: 3vw;
+ width: 2.7vw;
+}
 
-.trashImg {
-    position: absolute;
-    top: 66%;
-    left: 29.5%;
-
-width: 60%;
+.modalButton {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 3.5vw;
+  height: 3.2vw;
   
+ 
 }
 
-.backgroundImage {
-    position: relative;
+.modalButton:hover {
+  background-color: #ABD9FF;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px #FFF4D2;
+  box-shadow: 0px 0px 15px #FFF4D2;
+ 
 }
+
 </style>
 
