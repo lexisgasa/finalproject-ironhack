@@ -13,7 +13,7 @@
           <button @click="toggleComplete" class="backgroundButton">
             <img src="../assets/done3s.png" />
           </button>
-          <button @click="editTask" class="backgroundButton">
+          <button @click="editTasks" class="backgroundButton">
             <img src="../assets/edit4s.png" />
           </button>
           <button @click="showModal" class="backgroundButton">
@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
@@ -75,6 +75,7 @@ const currentDescription = ref("");
 const newDescription = ref("")
 const newTitle = ref("")
 const isComplete = ref(false)
+const showInput = ref("")
 
 
 const toggleComplete = () => {
@@ -106,7 +107,7 @@ const cancelEdit = () => {
   editData.value = false;
 };
 
-const editTask = (title, description, id) => {
+const editTasks = (title, description, id) => {
   if (isComplete.value === false ) {
   editData.value = true;
   currentTitle.value = props.task.title;
@@ -119,6 +120,7 @@ const editTask = (title, description, id) => {
 const showErrorMess = ref(false);
 const errorMess = ref(null);
 const sendData = async () => {
+
   if (newTitle.value.length === 0 || newDescription.value.length === 0) {
     //Lanzar un error
     showErrorMess.value = true;
@@ -127,8 +129,9 @@ const sendData = async () => {
       showErrorMess.value = false;
     }, 5000);
   } else {
-    await taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
-    showInput.value = false
+    // await taskStore.editTask(newTitle.value, newDescription.value, props.task.id);
+    await useTaskStore().editTask(newTitle.value, newDescription.value, props.task.id) 
+    showInput.value = false 
     emit("updateTask");
   }
 };
